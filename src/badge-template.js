@@ -3,11 +3,16 @@ import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 class BadgeTemplate extends LitElement {
-    static properties = {
+    static get properties(){
+        return {
         badgeName: { type: String},
-    
+        description: {type: String},
+        badgeIcon: {type: String},
+        };
     }
-    static styles = css`
+    static get styles() {
+        return css`
+
     :host {
         display:block;
     }
@@ -21,23 +26,48 @@ class BadgeTemplate extends LitElement {
         padding:5px;
         background-color:#33C8FF;
     }
+    .details {
+        float:  right;
+    }
     `;
+    }
     constructor(){
         super();
         this.badgeName = "Badge Name";
-        this.badgeIcon = "";
+        this.badgeIcon = new URL('../assets/Cognito.png', import.meta.url).href;
+        this.description = "Details";
+        //this.badge = [];
+        //this.updateBadge();
     }
+    
+    //  updateBadge(){
+    //     const address = new URL('../api/badge.js', import.meta.url).href
+    //   fetch(address).then((response) => {
+    //     if (response.ok) {
+    //         return response.json()
+    //     }
+    //     return [];
+    //    })
+    //    .then((data) => {
+    //     this.badge = data;
+    //    });
+    // }
     render() {
         return html`
-        <div class = "badge-outline">
+        <div class = "badge-outline">   
             <div class = "badge-info">
                 <div class = "icon">
-                    <simple-icon icon="${this.badgeIcon}"></simple-icon>
+                <img src=${this.badgeIcon}>
                 </div>
                     <div class = "name">
                         ${this.badgeName}
                     </div>
-                   
+                    <details class="details">
+                        <summary>${this.description}</summary>
+                    <div>
+                        <slot></slot>
+                    </div>
+                    </details>
             </div>
         </div>
         `;

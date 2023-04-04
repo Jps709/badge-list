@@ -1,13 +1,19 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 class BadgeTemplate extends LitElement {
     static get properties(){
         return {
-        badgeName: { type: String},
-        description: {type: String},
-        badgeIcon: {type: String},
+            badgeName: {type: String},
+            badgeIcon: {type: String},
+            badgeDescription: {type: String},
+            descriptionLink: {type: String},
+            linkName: {type: String},
+            breakLine: {type: String},
+            creatorIcon: {type: String},
+            badgeCreator: {type: String},
+            compTime:{type: String},
         toggleOpen: {type: Boolean, reflect: true}
         };
     }
@@ -50,22 +56,10 @@ class BadgeTemplate extends LitElement {
         this.creatorIcon = "Test2";
         this.badgeCreator = "Joshua Hantman";
         this.compTime = "1.0 hour";
-         //this.badge = [];
-        //this.updateBadge();
+       
     }
     
-    //  updateBadge(){
-    //     const address = new URL('../api/badge-data.js', import.meta.url).href
-    //   fetch(address).then((response) => {
-    //     if (response.ok) {
-    //         return response.json()
-    //     }
-    //     return [];
-    //    })
-    //    .then((data) => {
-    //     this.badge = data;
-    //    });
-    // }
+    
 
     toggleEvent(e){
         if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){

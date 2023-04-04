@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-class BadgeTemplate extends LitElement {
+export class BadgeTemplate extends LitElement {
     static get properties(){
         return {
             badgeName: {type: String},

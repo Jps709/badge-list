@@ -31,6 +31,7 @@ class BadgeTemplate extends LitElement {
    margin: 20px;
    min-height: 50px
    padding:5px;
+   background-color:#CFE5F3;
     }
    
     .icon{

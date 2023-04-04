@@ -8,7 +8,7 @@ import "./search-bar.js";
 
 export class BadgeList extends LitElement {
    static get tag(){
-return 'badge-list';
+      return 'badge-list';
    }
     static get properties() {
     return {
@@ -24,8 +24,9 @@ return 'badge-list';
     
    }
    .wrapper {
-    border: 2px solid black;
+  
     display: flex;
+   
    }
    .item{
     display: inline-flex;
@@ -40,9 +41,8 @@ return 'badge-list';
     }
 
   updateBadge(){
-    const address = new URL('../api/badge-data.js', import.meta.url).href
+    const address = new URL('../assets/badge-data.json', import.meta.url).href
   fetch(address).then((response) => {
-    console.log(response);
     if (response.ok) {
         return response.json()
     }

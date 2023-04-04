@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-class BadgeTemplate extends LitElement {
+export class BadgeTemplate extends LitElement {
     static get properties(){
         return {
             badgeName: {type: String},
@@ -24,13 +24,14 @@ class BadgeTemplate extends LitElement {
         display:block;
     }
     .badge-outline{
-   border-width: 4px 4px 4px 16px;
-   border-style:solid;
-   border-color:#3386FF
-   border-radius: 10px;
-   margin: 20px;
-   min-height: 50px
-   padding:5px;
+        border-width: 4px 4px 4px 16px;
+        border-style:solid;
+        border-color:#3386FF;
+        border-radius: 10px;
+        margin: 20px;
+        min-height: 50px;
+        padding:5px;
+        background-color:#CFE5F3;
     }
    
     .icon{

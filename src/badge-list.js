@@ -12,7 +12,7 @@ export class BadgeList extends LitElement {
    }
     static get properties() {
     return {
-        badge: {type: Array}
+        badge: {type: Array},
     }
   }
 

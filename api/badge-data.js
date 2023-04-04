@@ -10,7 +10,6 @@ export default async function handler(request, res) {
         "badgeCreator": "Joshua Hantman",
         "compTime": "",
     },
-
     { 
         "badgeName": "Badge Name",
         "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
@@ -20,7 +19,6 @@ export default async function handler(request, res) {
         "badgeCreator": "Joshua Hantman",
         "compTime": "",
     },
-
     { 
         "badgeName": "Badge Name",
         "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
@@ -30,7 +28,6 @@ export default async function handler(request, res) {
         "badgeCreator": "Joshua Hantman",
         "compTime": "",
     },
-
     { 
         "badgeName": "Badge Name",
         "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
@@ -40,7 +37,6 @@ export default async function handler(request, res) {
         "badgeCreator": "Joshua Hantman",
         "compTime": "",
     },
-
     { 
         "badgeName": "Badge Name",
         "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",

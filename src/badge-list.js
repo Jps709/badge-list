@@ -8,7 +8,7 @@ import "./search-bar.js";
 
 export class BadgeList extends LitElement {
    static get tag(){
-return 'badgr-list';
+return 'badge-list';
    }
     static get properties() {
     return {
@@ -16,9 +16,26 @@ return 'badgr-list';
     }
   }
 
+  
+  static get style() {
+    return css`
+   :host {
+    display: block;
+    
+   }
+   .wrapper {
+    border: 2px solid black;
+    display: flex;
+   }
+   .item{
+    display: inline-flex;
+   }
+  `;
+  }
+
   constructor(){
     super();
-   this.badges = [];
+   this.badge = [];
    this.updateBadge();
     }
 
@@ -34,20 +51,11 @@ return 'badgr-list';
     this.badge = data;
    });
 }
-  static get style() {
-    return css`
-   :host {
-    display: block;
-    
-   }
-  `;
-  }
-
 
   render() {
     return html`
    <div class ="wrapper">
-    ${this.badges.map(badge => html`
+    ${this.badge.map(badge => html`
     <div class = "item">
         <badge-template
         badgeName="${badge.badgeName}"

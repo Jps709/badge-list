@@ -1,3 +1,4 @@
+
 export default async function handler(request, res) {
 
     const badgeData = [
@@ -10,42 +11,7 @@ export default async function handler(request, res) {
         "badgeCreator": "Joshua Hantman",
         "compTime": "",
     },
-    { 
-        "badgeName": "Badge Name",
-        "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
-        "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "",
-        "creatorIcon": "",
-        "badgeCreator": "Joshua Hantman",
-        "compTime": "",
-    },
-    { 
-        "badgeName": "Badge Name",
-        "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
-        "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "",
-        "creatorIcon": "",
-        "badgeCreator": "Joshua Hantman",
-        "compTime": "",
-    },
-    { 
-        "badgeName": "Badge Name",
-        "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
-        "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "",
-        "creatorIcon": "",
-        "badgeCreator": "Joshua Hantman",
-        "compTime": "",
-    },
-    { 
-        "badgeName": "Badge Name",
-        "badgeIcon": "new URL('../assets/Cognito.png', import.meta.url).href;",
-        "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "",
-        "creatorIcon": "",
-        "badgeCreator": "Joshua Hantman",
-        "compTime": "",
-    },
+   
  ];
 
  res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

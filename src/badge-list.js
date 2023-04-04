@@ -12,12 +12,12 @@ return 'badge-list';
    }
     static get properties() {
     return {
-        badges: {type: Array}
+        badge: {type: Array}
     }
   }
 
   
-  static get style() {
+  static get styles() {
     return css`
    :host {
     display: block;
@@ -42,6 +42,7 @@ return 'badge-list';
   updateBadge(){
     const address = new URL('../api/badge-data.js', import.meta.url).href
   fetch(address).then((response) => {
+    console.log(response);
     if (response.ok) {
         return response.json()
     }
@@ -75,4 +76,4 @@ return 'badge-list';
 }
 }
 
-customElements.define('badge-list', BadgeList);
+customElements.define(BadgeList.tag, BadgeList);

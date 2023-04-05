@@ -1,6 +1,4 @@
 import { LitElement, html, css } from 'lit';
-import "@lrnwebcomponents/simple-icon/simple-icon.js";
-import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 import "./badge-template.js";
 import "./search-bar.js";
 
@@ -41,7 +39,7 @@ export class BadgeList extends LitElement {
     }
 
     updateBadge() {
-      const address = '../api/badge-data.js';
+      const address = '../assets/badge-data.json';
       fetch(address).then((response) => {
           if (response.ok) {
               return response.json()
@@ -55,7 +53,7 @@ export class BadgeList extends LitElement {
 
   render() {
     return html`
-   <div class ="wrapper">
+   <div class = "wrapper">
     ${this.badges.map(badge => html`
     <div class = "item">
         <badge-template
@@ -67,8 +65,7 @@ export class BadgeList extends LitElement {
         breakLine="${badge.breakLine}"
         creatorIcon="${badge.creatorIcon}"
         badgeCreator="${badge.badgeCreator}"
-        compTime="${badge.compTime}" >
-        </badge-template>
+        compTime="${badge.compTime}"></badge-template>
     </div>
     `)}
    </div>

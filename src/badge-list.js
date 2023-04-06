@@ -22,7 +22,7 @@ export class BadgeList extends LitElement {
     
    }
    .wrapper {
-  
+    border: overscroll-behavior-block;
    display: flex;
    
    }

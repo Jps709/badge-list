@@ -39,7 +39,7 @@ export class BadgeList extends LitElement {
     }
 
     updateBadge() {
-      const address = '../assets/badge-data.json';
+      const address = '../api/badge-data';
       fetch(address).then((response) => {
           if (response.ok) {
               return response.json()

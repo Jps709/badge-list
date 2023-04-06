@@ -22,8 +22,8 @@ export class BadgeList extends LitElement {
     
    }
    .wrapper {
-    border: overscroll-behavior-block;
-   display: flex;
+    border: 2px solid overscroll-behavior-block;
+  
    
    }
    .item{

@@ -18,16 +18,16 @@ export class BadgeList extends LitElement {
   static get styles() {
     return css`
    :host {
-    display: block;
+ 
     
    }
    .wrapper {
   
-    display: flex;
+   display: flex;
    
    }
    .item{
-    display: inline-flex;
+ 
    }
   `;
   }

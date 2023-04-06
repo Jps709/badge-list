@@ -4,7 +4,7 @@ export default async function handler(request, res) {
      {   "badgeName": "Badge Name",
         "badgeIcon": new URL('../assets/Cognito.png', import.meta.url).href,
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "Test1",
+        "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
         "breakLine": "------------------------------",
         "creatorIcon": "Test2",

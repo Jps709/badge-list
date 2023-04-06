@@ -24,14 +24,14 @@ export class BadgeTemplate extends LitElement {
         display:block;
     }
     .badge-outline{
-        border-width: 4px 4px 4px 16px;
-        border-style:solid;
-        border-color:#3386FF;
-        border-radius: 10px;
-        margin: 20px;
-        min-height: 50px;
-        padding:5px;
-        background-color:#CFE5F3;
+   border-width: 4px 4px 4px 16px;
+   border-style:solid;
+   border-color:#3386FF
+   border-radius: 10px;
+   margin: 20px;
+   min-height: 50px
+   padding:5px;
+   background-color:#CFE5F3;
     }
    
     .icon{

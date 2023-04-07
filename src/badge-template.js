@@ -58,8 +58,8 @@ export class BadgeTemplate extends LitElement {
         this.compTime = "1.0 hour";
         this.stepInfo = "Steps to Earn This Badge"
        this.toggleOpen = false;
-       this.steps = []
-       this.updateSteps()
+    //    this.steps = []
+    //    this.updateSteps()
     }
     
     
@@ -72,20 +72,20 @@ export class BadgeTemplate extends LitElement {
             this.toggleOpen = false;
         }
     }
-    updateSteps() {
-        const address = '../api/step-data';
-        fetch(address).then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-            return [];
-        })
-        .then((data) => {
+    // updateSteps() {
+    //     const address = '../api/step-data';
+    //     fetch(address).then((response) => {
+    //         if (response.ok) {
+    //             return response.json()
+    //         }
+    //         return [];
+    //     })
+    //     .then((data) => {
        
-            this.steps = data;
+    //         this.steps = data;
 
-        }); 
-    }
+    //     }); 
+    // }
     render() {
         return html`
         <div class = "badge-outline">   
@@ -114,11 +114,11 @@ export class BadgeTemplate extends LitElement {
                             </div>
                             <div>
                                 ${this.stepInfo}
-                            <div>
+                            <!-- <div>
                             ${this.steps.map(step => html `
                             <step-list stepIcon="${step.stepIcon}" stepName="${step.stepName}" stepTime="${step.stepTime}"></step-list>
                             `)}
-                            </div>
+                            </div> -->
     </div>
                     </details>
             </div>

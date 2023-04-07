@@ -53,6 +53,7 @@ export class BadgeList extends LitElement {
 
   render() {
     return html`
+    <search-bar @value-changed="${this._handleSearchEvent}">></search-bar>
    <div class = "wrapper">
     ${this.badges.map(badge => html`
     <div class = "item">

@@ -56,10 +56,7 @@ export class BadgeTemplate extends LitElement {
         this.creatorIcon = "Test2";
         this.badgeCreator = "Joshua Hantman";
         this.compTime = "1.0 hour";
-        this.stepInfo = "Steps to Earn This Badge"
-       this.toggleOpen = false;
-       this.steps = []
-       this.updateSteps()
+       
     }
     
     
@@ -72,54 +69,36 @@ export class BadgeTemplate extends LitElement {
             this.toggleOpen = false;
         }
     }
-    updateSteps() {
-        const address = '../api/step-data';
-        fetch(address).then((response) => {
-            if (response.ok) {
-                return response.json()
-            }
-            return [];
-        })
-        .then((data) => {
-       
-            this.steps = data;
 
-        }); 
-    }
     render() {
         return html`
         <div class = "badge-outline">   
             <div class = "badge-info">
-                <div>
-                <img src=${this.badgeIcon} class = "icon" alt ="Badge Icon">
+                    <div>
+                    <img src=${this.badgeIcon} class = "icon" alt ="Badge Icon">
                         ${this.badgeName}
             
-                </div>
-                <br>
-                <details .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
-                    <summary></summary>
-                     ${this.badgeDescription}
-                        <div class = "link">
-                        <a href=${this.descriptionLink}>${this.linkName}</a>
-                        </div>
+                    </div>
+                    <br>
+                    <details .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
+                        <summary></summary>
+                        ${this.badgeDescription}
 
-                        <div>
-                        ${this.breakLine}
-                        </div>  
-                        <div class = "creator">
-                            Badge Creator: <img src=${this.creatorIcon} alt="Badge Creator Icon"/> ${this.badgeCreator}
-                        </div>
-                        <div>
+                            <div class = "link">
+                            <a href=${this.descriptionLink}>${this.linkName}</a>
+                            </div>
+
+                            <div>
+                            ${this.breakLine}
+                            </div>  
+
+                            <div class = "creator">
+                                Badge Creator: <img src=${this.creatorIcon} alt="Badge Creator Icon"/> ${this.badgeCreator}
+                            </div>
+
+                            <div>
                                 Approximate time to complete: ${this.compTime}
                             </div>
-                            <div>
-                                ${this.stepInfo}
-                            <div>
-                            ${this.steps.map(step => html `
-                            <step-list stepIcon="${step.stepIcon}" stepName="${step.stepName}" stepTime="${step.stepTime}"></step-list>
-                            `)}
-                            </div>
-    </div>
                     </details>
             </div>
         </div>

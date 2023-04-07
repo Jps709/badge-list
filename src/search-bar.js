@@ -22,7 +22,7 @@ export class SearchBar extends LitElement {
       }
     constructor(){
         super();
-      this.value = '';
+      this.value = 'Default Value';
     }
     
     render() {

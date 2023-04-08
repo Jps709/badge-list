@@ -14,7 +14,7 @@ const search = req.query.search || '';
     {   "badgeName": "Amazon | AM",
         "badgeIcon": new URL('../assets/CAWS-IAM-Exploitation.png.png', import.meta.url).href,
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "Test1",
+        "descriptionLink":  new URL('https://www.youtube.com/watch?v=IEt8aHdxSHE', import.meta.url).href,
         "linkName": "Cognito Info Link",
         "breakLine": "------------------------------",
         "creatorIcon": "Test2",
@@ -24,7 +24,7 @@ const search = req.query.search || '';
     {   "badgeName": "Signing up for AWS Web Services",
          "badgeIcon": new URL('../assets/amazon-web-services_vxmp.png', import.meta.url).href,
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "Test1",
+        "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
         "breakLine": "------------------------------",
         "creatorIcon": "Test2",
@@ -34,7 +34,7 @@ const search = req.query.search || '';
     {   "badgeName": "AWS-LAMBDA Phase 1",
         "badgeIcon": new URL('../assets/Lambda.png', import.meta.url).href,
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-        "descriptionLink": "Test1",
+        "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
         "breakLine": "------------------------------",
         "creatorIcon": "Test2",
@@ -44,12 +44,12 @@ const search = req.query.search || '';
     {   "badgeName": "Amazon S3 Phase 1",
     "badgeIcon": new URL('../assets/S3.png', import.meta.url).href,
     "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-    "descriptionLink": "Test1",
+    "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
     "linkName": "Cognito Info Link",
     "breakLine": "------------------------------",
     "creatorIcon": "Test2",
     "badgeCreator": "Joshua Hantman",
-    "compTime": "1.0 hour"
+    "compTime": "99999.0 hour"
     }
     ];
     badgeData.map((badge) => {

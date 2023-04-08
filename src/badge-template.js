@@ -24,7 +24,7 @@ export class BadgeTemplate extends LitElement {
         display:block;
     }
     .badge-outline{
-   border-width: 4px 4px 4px 16px;
+   border-width: 2px 2px 2px 16px;
    border-style:solid;
    border-color:#3386FF;
    border-radius: 10px;

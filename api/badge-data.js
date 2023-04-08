@@ -52,6 +52,14 @@ const search = req.query.search || '';
     "compTime": "1.0 hour"
     }
     ];
+    badgeData.map((badge) => {
+        badge.index = badge.badgeName.toLowerCase() + " " + badge.badgeIcon.toLowerCase() + " " + badge.badgeDescription.toLowerCase() + " " + badge.descriptionLink.toLowerCase() + " " + badge.linkName.toLowerCase() + " " + badge.breakLine.toLowerCase() + " " + badge.creatorIcon.toLowerCase() + " " + badge.badgeCreator.toLowerCase() + " " + badge.compTime.toLowerCase();
+    });
+
+    badgeData = badgeData.filter((badge) => {
+        return badge.index.indexOf(search.toLowerCase()) > -1;
+    });
+    console.log(badgeData);
 res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
 res.setHeader("Access-Control-Allow-Credentials", "true");
 res.setHeader("Access-Control-Allow-Origin", "*");

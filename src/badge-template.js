@@ -14,7 +14,10 @@ export class BadgeTemplate extends LitElement {
             creatorIcon: {type: String},
             badgeCreator: {type: String},
             compTime:{type: String},
-        toggleOpen: {type: Boolean, reflect: true}
+            toggleOpen: {type: Boolean, reflect: true},
+            stepIcon: { type: String },
+            stepName: { type: String},
+            stepTime: { type: String}
         };
     }
     static get styles() {
@@ -39,16 +42,13 @@ export class BadgeTemplate extends LitElement {
         max-height: 50px;
         float: left; 
     }
-    /* img {
-        max-height: 50px;
-        float: left;
-    } */
+ 
     `;
     }
     constructor(){
         super();
         this.badgeName = "Badge Name";
-        this.badgeIcon = new URL('../assets/Cognito.png', import.meta.url).href;
+        this.badgeIcon = "https://www.drupal.org/files/styles/grid-3-2x/public/project-images/553dbabbd287c26ca83aef42.jpg?itok=ruAqqobg";
         this.badgeDescription = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools";
         this.descriptionLink = "Test1";
         this.linkName = "Cognito Info Link";
@@ -56,10 +56,28 @@ export class BadgeTemplate extends LitElement {
         this.creatorIcon = "Test2";
         this.badgeCreator = "Joshua Hantman";
         this.compTime = "1.0 hour";
-       
+        this.toggleOpen = false;
+      
+
+        this.stepIcon = 'star-border';
+        this.stepName = "Step 1"
+        this.stepTime = "3.0 hours"
     }
     
-    
+    // updateSteps(badgeName){
+    //     const address = '../api/step-data';
+    //     fetch(address).then((response) => {
+    //         if(response.ok){
+    //             return response.json();
+    //         }
+    //         return [];
+    //     })
+    //     .then((data) => {
+    //         let filterSteps = data.filter(item => {
+    //           return item.tag === badgeName});
+    //         this.steps=filterSteps; 
+    //     });
+    //   }
 
     toggleEvent(e){
         if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
@@ -75,8 +93,7 @@ export class BadgeTemplate extends LitElement {
         <div class = "badge-outline">   
             <div class = "badge-info">
                     <div>
-                    <img src=${this.badgeIcon} class = "icon" alt ="Badge Icon">
-                        ${this.badgeName}
+                    <img src=${this.badgeIcon} class = "icon" alt ="Badge Icon"/>  ${this.badgeName}
             
                     </div>
                     <br>
@@ -98,6 +115,10 @@ export class BadgeTemplate extends LitElement {
 
                             <div>
                                 Approximate time to complete: ${this.compTime}
+                            </div>
+                            Steps to Earn this Badge
+                            <div>
+                           ${this.stepIcon} ${this.stepName} ${this.stepTime}
                             </div>
                     </details>
             </div>

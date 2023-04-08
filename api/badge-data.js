@@ -2,7 +2,7 @@ export default async function handler(req, res) {
 const search = req.query.search || '';
     var badgeData = [
      {   "badgeName": "Amazon Cognito",
-        "badgeIcon": new URL('../assets/Cognito.png', import.meta.url).href,
+        "badgeIcon": 'https://www.drupal.org/files/styles/grid-3-2x/public/project-images/553dbabbd287c26ca83aef42.jpg?itok=ruAqqobg', 
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
         "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
@@ -12,7 +12,7 @@ const search = req.query.search || '';
         "compTime": "1.0 hour"
     },
     {   "badgeName": "Amazon | AM",
-        "badgeIcon": new URL('../assets/CAWS-IAM-Exploitation.png.png', import.meta.url).href,
+        "badgeIcon": 'https://i0.wp.com/sra.io/wp-content/uploads/2020/01/AWS-IAM-Exploitation.png?fit=1102%2C620&ssl=1',
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
         "descriptionLink":  new URL('https://www.youtube.com/watch?v=IEt8aHdxSHE', import.meta.url).href,
         "linkName": "Cognito Info Link",
@@ -22,8 +22,8 @@ const search = req.query.search || '';
         "compTime": "1.0 hour"
     },
     {   "badgeName": "Signing up for AWS Web Services",
-         "badgeIcon": new URL('../assets/amazon-web-services_vxmp.png', import.meta.url).href,
-        "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
+         "badgeIcon": '"https://i.pcmag.com/imagery/reviews/0179dSC1AqaTy8DbcTJMDYE-7..v1569472044.jpg',
+        "badgeDescription": "Learn ",
         "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
         "breakLine": "------------------------------",
@@ -32,7 +32,7 @@ const search = req.query.search || '';
         "compTime": "1.0 hour"
     },
     {   "badgeName": "AWS-LAMBDA Phase 1",
-        "badgeIcon": new URL('../assets/Lambda.png', import.meta.url).href,
+        "badgeIcon": 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/306854381/original/f5ba46970eb2047541316dc6e307c03ef2764a8d/create-a-simple-microservice-using-python-and-aws-lambda.png',
         "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
         "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
@@ -42,9 +42,9 @@ const search = req.query.search || '';
         "compTime": "1.0 hour"
     },
     {   "badgeName": "Amazon S3 Phase 1",
-    "badgeIcon": new URL('../assets/S3.png', import.meta.url).href,
+    "badgeIcon": 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*o7BIK2xiWFJPiqKc61sxTQ@2x.jpeg', 
     "badgeDescription": "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools",
-    "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
+    "descriptionLink":   new URL('https://www.youtube.com/watch?v=IEt8aHdxSHE', import.meta.url).href,
     "linkName": "Cognito Info Link",
     "breakLine": "------------------------------",
     "creatorIcon": "Test2",
@@ -53,7 +53,7 @@ const search = req.query.search || '';
     }
     ];
     badgeData.map((badge) => {
-        badge.index = badge.badgeName.toLowerCase() + " " + badge.badgeIcon.toLowerCase() + " " + badge.badgeDescription.toLowerCase() + " " + badge.descriptionLink.toLowerCase() + " " + badge.linkName.toLowerCase() + " " + badge.breakLine.toLowerCase() + " " + badge.creatorIcon.toLowerCase() + " " + badge.badgeCreator.toLowerCase() + " " + badge.compTime.toLowerCase();
+        badge.index = badge.badgeName.toLowerCase() + " " + badge.badgeDescription.toLowerCase() + " " + badge.descriptionLink.toLowerCase() + " " + badge.linkName.toLowerCase() + " " + badge.breakLine.toLowerCase() + " " + badge.creatorIcon.toLowerCase() + " " + badge.badgeCreator.toLowerCase() + " " + badge.compTime.toLowerCase();
     });
 
     badgeData = badgeData.filter((badge) => {

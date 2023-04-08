@@ -1,12 +1,13 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
+import "./badge-template.js";
+import "./search-bar.js";
 
 class StepList extends LitElement {
   static properties = {
-    stepIcon: { type: String },
-    stepName: { type: String},
-    stepTime: { type: String}
+  
+    steps: {type: Array }
   }
 
   static styles = css`
@@ -22,16 +23,33 @@ class StepList extends LitElement {
 
   constructor() {
     super();
-    this.stepIcon = 'star-border';
-    this.stepName = "Step 1"
-    this.stepTime = "2.0 hours"
+    this.steps = []
+        this.updateSteps()
+  }
+
+  updateSteps(badgeName){
+    const address = '../api/step-data';
+    fetch(address).then((response) => {
+        if(response.ok){
+            return response.json();
+        }
+        return [];
+    })
+    .then((data) => {
+        let filterSteps = data.filter(item => {
+          return item.tag === badgeName});
+        this.steps=filterSteps; 
+    });
   }
 
   render() {
     return html`
+    <div class = "item">
       <div class="wrapper">
-        <simple-icon icon="${this.stepIcon}"></simple-icon> ${this.stepName} ${this.stepTime}
-      </div>
+      ${this.steps.map(step => html`
+        <badge-template stepIcon="${step.stepIcon}" stepName="${step.stepName}" stepTime="${step.stepTime}"></badge-template>
+         `)} </div>
+  </div>
     `;
   }
 }

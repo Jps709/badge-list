@@ -35,20 +35,28 @@ export class BadgeList extends LitElement {
   constructor(){
     super();
    this.badges = [];
-   this.updateBadge();
+   this.getSearchResults().then((results) => {
+    this.badges = results;
+   });
     }
 
-    updateBadge() {
-      const address = '../api/badge-data';
-      fetch(address).then((response) => {
+    async getSearchResults(value = '') {
+      const address = `/api/badge-data?search=${value}`;
+      const results = await fetch(address).then((response) => {
           if (response.ok) {
               return response.json()
           }
           return [];
       })
       .then((data) => {
-          this.badges = data;
+          return data;
       });
+      return results;
+    }
+
+    async _handleSearchEvent(e) {
+      const term = e.detail.value;
+      this.badges = await this.getSearchResults(term);
     }
 
   render() {

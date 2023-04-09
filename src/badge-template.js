@@ -44,12 +44,11 @@ export class BadgeTemplate extends LitElement {
         float: left; 
         margin-left: 10px;
     }
- summary{
-    list-style:none;
- }
- /* .interior{
-    background-color: white;
- } */
+    .interior{
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
     `;
     }
     constructor(){
@@ -105,7 +104,7 @@ export class BadgeTemplate extends LitElement {
                     <!-- </div>
                     <br> -->
                     <details  .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
-                        <summary><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon">  ${this.badgeName}</summary>
+                        <summary class = "interior"><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon">  ${this.badgeName}</summary>
                         <div class = interior>
                         ${this.badgeDescription}
 

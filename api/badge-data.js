@@ -22,7 +22,7 @@ const search = req.query.search || '';
         "compTime": "1.0 hour"
     },
     {   "badgeName": "Signing up for AWS Web Services",
-         "badgeIcon": '"https://i.pcmag.com/imagery/reviews/0179dSC1AqaTy8DbcTJMDYE-7..v1569472044.jpg',
+         "badgeIcon": 'https://i.pcmag.com/imagery/reviews/0179dSC1AqaTy8DbcTJMDYE-7..v1569472044.jpg',
         "badgeDescription": "Learn ",
         "descriptionLink": new URL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', import.meta.url).href,
         "linkName": "Cognito Info Link",
@@ -53,7 +53,7 @@ const search = req.query.search || '';
     }
     ];
     badgeData.map((badge) => {
-        badge.index = badge.badgeName.toLowerCase() + " " + badge.badgeDescription.toLowerCase() + " " + badge.descriptionLink.toLowerCase() + " " + badge.linkName.toLowerCase() + " " + badge.breakLine.toLowerCase() + " " + badge.creatorIcon.toLowerCase() + " " + badge.badgeCreator.toLowerCase() + " " + badge.compTime.toLowerCase();
+        badge.index = badge.badgeName.toLowerCase() + " " + badge.badgeDescription.toLowerCase() + " " + badge.linkName.toLowerCase() + " " + badge.breakLine.toLowerCase() + " " + badge.creatorIcon.toLowerCase() + " " + badge.badgeCreator.toLowerCase() + " " + badge.compTime.toLowerCase();
     });
 
     badgeData = badgeData.filter((badge) => {

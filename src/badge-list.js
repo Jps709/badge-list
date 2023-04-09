@@ -67,7 +67,7 @@ export class BadgeList extends LitElement {
     <div class = "item">
         <badge-template
         badgeName="${badge.badgeName}"
-        icon="${badge.badgeIcon}"
+        badgeIcon="${badge.badgeIcon}"
         badgeDescription="${badge.badgeDescription}"
         descriptionLink="${badge.descriptionLink}"
         linkName="${badge.linkName}" 

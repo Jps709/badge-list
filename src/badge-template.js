@@ -31,24 +31,30 @@ export class BadgeTemplate extends LitElement {
    border-style:solid;
    border-color:#3386FF;
    border-radius: 10px;
-   margin: 20px;
-   min-height: 50px;
-   padding: 5px;
+   margin: 15px;
+  width: 900px;
    background-color:#CFE5F3;
     }
    
     .icon{
    
-        max-height: 50px;
+        height: 50px;
+        width: 50px;
         float: left; 
+        margin-left: 10px;
     }
- 
+ summary{
+    list-style:none;
+ }
+ /* .interior{
+    background-color: white;
+ } */
     `;
     }
     constructor(){
         super();
         this.badgeName = "Badge Name";
-        this.badgeIcon = "https://www.drupal.org/files/styles/grid-3-2x/public/project-images/553dbabbd287c26ca83aef42.jpg?itok=ruAqqobg";
+        this.badgeIcon = 'https://www.drupal.org/files/styles/grid-3-2x/public/project-images/553dbabbd287c26ca83aef42.jpg?itok=ruAqqobg';
         this.badgeDescription = "Learn the basics of how Amazon Cognito works, and how you can use it to create User Sign In, Sign In, Access Control, User Pools, and Identity Pools";
         this.descriptionLink = "Test1";
         this.linkName = "Cognito Info Link";
@@ -92,13 +98,14 @@ export class BadgeTemplate extends LitElement {
         return html`
         <div class = "badge-outline">   
             <div class = "badge-info">
-                    <div>
-                    <img src=${this.badgeIcon} class = "icon" alt ="Badge Icon"/>  ${this.badgeName}
+                    <!-- <div> -->
+                    
             
-                    </div>
-                    <br>
-                    <details .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
-                        <summary></summary>
+                    <!-- </div>
+                    <br> -->
+                    <details  .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
+                        <summary><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon">  ${this.badgeName}</summary>
+                        <div class = interior>
                         ${this.badgeDescription}
 
                             <div class = "link">
@@ -110,7 +117,7 @@ export class BadgeTemplate extends LitElement {
                             </div>  
 
                             <div class = "creator">
-                                Badge Creator: <img src=${this.creatorIcon} alt="Badge Creator Icon"/> ${this.badgeCreator}
+                                Badge Creator: <img src="${this.creatorIcon}" alt="Badge Creator Icon"/> ${this.badgeCreator}
                             </div>
 
                             <div>
@@ -120,6 +127,7 @@ export class BadgeTemplate extends LitElement {
                             <div>
                            ${this.stepIcon} ${this.stepName} ${this.stepTime}
                             </div>
+                        </div>
                     </details>
             </div>
         </div>

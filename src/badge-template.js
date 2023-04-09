@@ -46,8 +46,8 @@ export class BadgeTemplate extends LitElement {
     }
     .interior{
       list-style: none;
-      display: flex;
-      justify-content: space-between;
+      
+      
     }
     `;
     }

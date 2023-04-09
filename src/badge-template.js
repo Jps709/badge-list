@@ -11,7 +11,7 @@ export class BadgeTemplate extends LitElement {
             descriptionLink: {type: String},
             linkName: {type: String},
             breakLine: {type: String},
-            creatorIcon: {type: String},
+           // creatorIcon: {type: String},
             badgeCreator: {type: String},
             compTime:{type: String},
             toggleOpen: {type: Boolean, reflect: true},
@@ -66,6 +66,13 @@ export class BadgeTemplate extends LitElement {
     .stepDiv{
         padding-top: 10px;
     }
+    .sIcon{
+        float:right;
+    }
+    .cIcon{
+        max-height: 40px;
+        max-width: 40px;
+    }
     `;
     }
     constructor(){
@@ -76,7 +83,7 @@ export class BadgeTemplate extends LitElement {
         this.descriptionLink = "Test1";
         this.linkName = "Cognito Info Link";
         this.breakLine = "------------------------------";
-        this.creatorIcon = "Test2";
+       // this.creatorIcon = 'https://badgesapp.psu.edu/uploads/user/image/23804/small_image_Joshua_pittsburgh2021.png';
         this.badgeCreator = "Joshua Hantman";
         this.compTime = "1.0 hour";
         this.toggleOpen = false;
@@ -115,13 +122,8 @@ export class BadgeTemplate extends LitElement {
         return html`
         <div class = "badge-outline">   
             <div class = "badge-info">
-                    <!-- <div> -->
-                    
-            
-                    <!-- </div>
-                    <br> -->
                     <details .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
-                        <summary class="exterior"><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon"/>  ${this.badgeName}</summary>
+                        <summary class="exterior"><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon"/>  ${this.badgeName} <simple-icon class="sIcon" icon="expand-more"></simple-icon></summary>
                         <div class="interior">
                         ${this.badgeDescription}
 
@@ -134,7 +136,7 @@ export class BadgeTemplate extends LitElement {
                             </div>  
 
                             <div class = "creator">
-                                Badge Creator: <img src="${this.creatorIcon}" alt="Badge Creator Icon"/> ${this.badgeCreator}
+                                Badge Creator: <!--<img src="${this.creatorIcon}" alt="Badge Creator Icon" class="cIcon"/> --> <simple-icon class ="cIcon" icon="supervisor-account"></simple-icon>  ${this.badgeCreator}
                             </div>
 
                             <div>

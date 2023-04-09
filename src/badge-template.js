@@ -32,7 +32,8 @@ export class BadgeTemplate extends LitElement {
    border-color:#3386FF;
    border-radius: 10px;
    margin: 15px;
-  width: 900px;
+   min-height: 50px;
+   padding: 5px;
    background-color:#CFE5F3;
     }
    

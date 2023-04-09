@@ -27,27 +27,44 @@ export class BadgeTemplate extends LitElement {
         display:block;
     }
     .badge-outline{
-   border-width: 2px 2px 2px 16px;
-   border-style:solid;
-   border-color:#3386FF;
-   border-radius: 10px;
-   margin: 15px;
-   min-height: 50px;
-   padding: 5px;
-   background-color:#CFE5F3;
+      border: 1px solid #3e98d3;
+      border-left: 15px solid #3e98d3;
+      border-radius: 5px;
+      width: 1000px;
+      text-align: left;
+      margin: auto;
+      margin-bottom: 5px;
     }
    
     .icon{
-   
-        height: 50px;
-        width: 50px;
-        float: left; 
-        margin-left: 10px;
+        max-height: 40px;
+      padding-left: 10px;
+      vertical-align: middle;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      max-width: 40px;
+    }
+    .exterior{
+      list-style: none;
+      background-color: #cfe6f4;
+      border-radius: 0px 5px 0px 0px;
+      min-height:40px;
     }
     .interior{
-      list-style: none;
-      
-      
+        padding: 24px;
+    }
+    .link{
+        padding-top: 5px;
+    }
+    .creator{
+        padding-bottom: 10px;
+    }
+    .break{
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+    .stepDiv{
+        padding-top: 10px;
     }
     `;
     }
@@ -103,16 +120,16 @@ export class BadgeTemplate extends LitElement {
             
                     <!-- </div>
                     <br> -->
-                    <details  .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
-                        <summary class = "interior"><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon">  ${this.badgeName}</summary>
-                        <div class = interior>
+                    <details .open="${this.toggleOpen}" @toggle="${this.toggleEvent}">
+                        <summary class="exterior"><img src="${this.badgeIcon}" class = "icon" alt ="Badge Icon"/>  ${this.badgeName}</summary>
+                        <div class="interior">
                         ${this.badgeDescription}
 
                             <div class = "link">
                             <a href=${this.descriptionLink}>${this.linkName}</a>
                             </div>
 
-                            <div>
+                            <div class="break">
                             ${this.breakLine}
                             </div>  
 
@@ -123,7 +140,9 @@ export class BadgeTemplate extends LitElement {
                             <div>
                                 Approximate time to complete: ${this.compTime}
                             </div>
+                            <div class="stepDiv">
                             Steps to Earn this Badge
+                            </div>
                             <div>
                            ${this.stepIcon} ${this.stepName} ${this.stepTime}
                             </div>

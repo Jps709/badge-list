@@ -7,7 +7,9 @@ import "./search-bar.js";
 class StepList extends LitElement {
   static properties = {
   
-    steps: {type: Array }
+    stepIcon: {type: String},
+    stepName: {type: String},
+    stepTime: {type: String}
   }
 
   static styles = css`
@@ -23,32 +25,18 @@ class StepList extends LitElement {
 
   constructor() {
     super();
-    this.steps = []
-        this.updateSteps()
+    this.stepIcon = "device:devices";
+    this.stepName = "Step Name";
+    this.stepTime = "1.0 hours";
   }
 
-  updateSteps(badgeName){
-    const address = '../api/step-data';
-    fetch(address).then((response) => {
-        if(response.ok){
-            return response.json();
-        }
-        return [];
-    })
-    .then((data) => {
-        let filterSteps = data.filter(item => {
-          return item.tag === badgeName});
-        this.steps=filterSteps; 
-    });
-  }
+  
 
   render() {
     return html`
     <div class = "item">
       <div class="wrapper">
-      ${this.steps.map(step => html`
-        <badge-template stepIcon="${step.stepIcon}" stepName="${step.stepName}" stepTime="${step.stepTime}"></badge-template>
-         `)} </div>
+      <simple-icon icon="${this.stepIcon}"></simple-icon> ${this.stepName} ${this.stepTime} </div>
   </div>
     `;
   }

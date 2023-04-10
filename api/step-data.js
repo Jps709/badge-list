@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         }
         ];
         badgeData.map((step) => {
-            step.index = step.stepIcon.toLowerCase() + " " + step.stepName.toLowerCase() + " " + step.stepTime.toLowerCase();
+            step.stepName.toLowerCase() + " " + step.stepTime.toLowerCase();
         });
     
         badgeData = badgeData.filter((step) => {

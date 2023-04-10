@@ -15,9 +15,7 @@ export class BadgeTemplate extends LitElement {
             badgeCreator: {type: String},
             compTime:{type: String},
             toggleOpen: {type: Boolean, reflect: true},
-            stepIcon: { type: String },
-            stepName: { type: String},
-            stepTime: { type: String}
+            steps: { type: Array }
         };
     }
     static get styles() {
@@ -87,27 +85,24 @@ export class BadgeTemplate extends LitElement {
         this.badgeCreator = "Joshua Hantman";
         this.compTime = "1.0 hour";
         this.toggleOpen = false;
-      
-
-        this.stepIcon = 'star-border';
-        this.stepName = "Step 1"
-        this.stepTime = "3.0 hours"
+        this.steps = []
+        this.updateSteps()
     }
     
-    // updateSteps(badgeName){
-    //     const address = '../api/step-data';
-    //     fetch(address).then((response) => {
-    //         if(response.ok){
-    //             return response.json();
-    //         }
-    //         return [];
-    //     })
-    //     .then((data) => {
-    //         let filterSteps = data.filter(item => {
-    //           return item.tag === badgeName});
-    //         this.steps=filterSteps; 
-    //     });
-    //   }
+    updateSteps(badgeName){
+        const address = '../api/step-data';
+        fetch(address).then((response) => {
+            if(response.ok){
+                return response.json();
+            }
+            return [];
+        })
+        .then((data) => {
+            let filterSteps = data.filter(item => {
+              return item.tag === badgeName});
+            this.steps=filterSteps; 
+        });
+      }
 
     toggleEvent(e){
         if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
@@ -146,7 +141,9 @@ export class BadgeTemplate extends LitElement {
                             Steps to Earn this Badge
                             </div>
                             <div>
-                           ${this.stepIcon} ${this.stepName} ${this.stepTime}
+                            ${this.steps.map(step => html`
+        <step-list stepIcon="${step.stepIcon}" stepName="${step.stepName}" stepTime="${step.stepTime}"></step-list>
+         `)}
                             </div>
                         </div>
                     </details>
